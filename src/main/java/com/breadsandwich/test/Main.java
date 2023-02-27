@@ -6,11 +6,17 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.*;
 
+import java.io.File;
+import java.util.Scanner;
 
 
 public class Main extends Test {
     public static void main(String[] args) throws Exception {
-        JDABuilder api = JDABuilder.createDefault("NzczMjc1Mzg4Mjk3NDc4MTU0.X6G20w.iGVaVr2JVKT97Wqs0Z2PAXjX70M")
+        File textFile = new File("C:\\Users\\gavqu\\Documents\\Discord Bot Things\\tokenToaster.txt");
+        Scanner scanner = new Scanner(textFile);
+        String token = scanner.nextLine();
+        System.out.println("token acquired");
+        JDABuilder api = JDABuilder.createDefault(token)
                 .addEventListeners(new Main())
                 .setStatus(OnlineStatus.ONLINE);
         api.setActivity(Activity.watching("toast | try %help")).build();
