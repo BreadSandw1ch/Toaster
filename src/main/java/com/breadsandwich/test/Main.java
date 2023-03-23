@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Main extends Test {
     public static void main(String[] args) throws Exception {
-        File textFile = new File("C:\\Users\\gavqu\\Documents\\Discord Bot Things\\tokenToaster.txt");
+        File textFile = new File("input/tokentoaster.txt");
         Scanner scanner = new Scanner(textFile);
         String token = scanner.nextLine();
         System.out.println("token acquired");
